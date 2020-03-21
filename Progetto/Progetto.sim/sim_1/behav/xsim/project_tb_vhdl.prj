@@ -1,0 +1,6 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../../../../Downloads/esempi di testbench/tb_pfrl_2020_in_wz.vhd" \
+
+# Do not sort compile order
+nosort
