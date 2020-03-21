@@ -53,10 +53,24 @@ signal curr_state, next_state : state;
 --per definire una variabile usare 2 signal
 
 
-
 begin
 
---RESET legge l'indirizzo da codificare
+--RESET inizializzazione segnali
+
+--ADDRESS-SET incrementa il valore di o_address per poter leggere da memoria. i valori di o_address vanno reinizializzati dopo un i_rst ricevuto
+--inizializzato all'indirizzo n.8 della ram,decremento di 1 ogni ciclo, fino a n.0
+
+--WAIT_CLK 
+
+--READ_RAM
+--leggo da memoria il valore di i_data salvando in un signal apposito, se il valore letto è l'indirizzo da codificare torno allo stato ADDRESS_SET
+--se ho letto un indirizzo base WZ, vado in stato CHECK_WZ
+
+--CHECK_WZ
+
+
+
+
 
 
 end Behavioral;
