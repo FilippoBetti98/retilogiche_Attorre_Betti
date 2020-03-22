@@ -66,11 +66,58 @@ begin
 --leggo da memoria il valore di i_data salvando in un signal apposito, se il valore letto è l'indirizzo da codificare torno allo stato ADDRESS_SET
 --se ho letto un indirizzo base WZ, vado in stato CHECK_WZ
 
---CHECK_WZ
+--CHECK_WZ controllo se l'indirizzo è nella wz
+--True va in OUT_SET
+--False va in ADDRESS_SET
 
 
+--OUT_SET setta o_data con il valore codificato correttamente 
+
+--WRITE_RAM setto segnali per output su ram
+    
+--ONE_HIGH alzo done
+
+--DONE_LOW abbasso done(completata scrittura e start basso)
 
 
-
-
+    find_wz : Process(i_clk, i_rst, i_start, i_data)
+    Begin 
+        if(i_rst = '1' ) then
+            curr_state <= RESET;
+        end if;
+        
+        if (rising_edge(i_clk)) then
+            
+            case curr_state is
+                
+                when RESET =>
+                
+                
+                when ADDRESS_SET =>
+                
+                
+                when WAIT_CLK =>
+            
+                
+                when READ_RAM =>
+                
+                
+                when CHECK_WZ =>
+                
+                
+                when OUT_SET =>
+                
+                
+                when WRITE_RAM =>
+                
+                
+                when DONE_HIGH =>
+                
+                
+                when DONE_LOW =>
+               
+               
+           end case;
+       end if;        
+    end process;
 end Behavioral;
