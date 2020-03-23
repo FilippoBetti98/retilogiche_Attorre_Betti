@@ -138,25 +138,25 @@ begin
                     --offset <= input_address - current_working_zone;
                     if(input_address - current_working_zone = "00000000") then
                         for i in 0 to 2 loop
-                            ram_pos_out(i) <= ram_pos_counter(i+1);
+                            ram_pos_out(i) <= ram_pos_counter(i);
                         end loop;
                         offset_onehot <= "0001";
                         curr_state <= OUT_SET;
                     elsif(input_address - current_working_zone = "00000001") then
                         for i in 0 to 2 loop
-                            ram_pos_out(i) <= ram_pos_counter(i+1);
+                            ram_pos_out(i) <= ram_pos_counter(i);
                         end loop;
                         offset_onehot <= "0010";
                         curr_state <= OUT_SET;
                     elsif(input_address - current_working_zone = "00000010") then
                         for i in 0 to 2 loop
-                            ram_pos_out(i) <= ram_pos_counter(i+1);
+                            ram_pos_out(i) <= ram_pos_counter(i);
                         end loop;
                         offset_onehot <= "0100";
                         curr_state <= OUT_SET;
                     elsif(input_address - current_working_zone = "00000011") then
                         for i in 0 to 2 loop
-                            ram_pos_out(i) <= ram_pos_counter(i+1);
+                            ram_pos_out(i) <= ram_pos_counter(i);
                         end loop;
                         offset_onehot <= "1000";
                         curr_state <= OUT_SET;
@@ -166,8 +166,8 @@ begin
                     
                 when OUT_SET =>
                     if(ram_pos_counter = "1111" ) then
-                        for i in 1 to 7 loop
-                            o_data(i-1) <= input_address(i);
+                        for i in 0 to 6 loop
+                            o_data(i) <= input_address(i);
                         end loop;
                         o_data(7) <= '0';
                         curr_state <= WRITE_RAM;
