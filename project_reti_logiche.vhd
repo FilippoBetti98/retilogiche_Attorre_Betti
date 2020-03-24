@@ -57,6 +57,7 @@ signal current_working_zone : std_logic_vector (7 downto 0);
 signal ram_pos_counter : std_logic_vector(3 downto 0);
 signal offset_onehot : std_logic_vector (3 downto 0);
 signal ram_pos_out : std_logic_vector (2 downto 0);
+
 --per definire una variabile usare 2 signal
 --var e var_next
 
